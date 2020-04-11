@@ -18,3 +18,10 @@ const connection = mysql.createConnection({
     if (err) throw err;
     start();
   });
+
+  function start () {
+      inquirer
+      .prompt({
+          
+      })
+  }
