@@ -1,8 +1,9 @@
+// packages
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const logo = require('asciiart-logo');
 
-
+// making the logo
 // const config = require('./package.json');
 // console.log(logo(config).render());
 
@@ -22,6 +23,7 @@ const logo = require('asciiart-logo');
 //     .render()
 // );
 
+//setting up the connection
 const connection = mysql.createConnection({
     host: "localhost",
   
@@ -47,8 +49,12 @@ const connection = mysql.createConnection({
           message: "What would you like to do?",
           type: "list",
           choices: ["View All Employees", "View all Employees by Department", "View all Employees by Manager", "Add Employee", "Remove Employee", "Update Employee Role", "Update Employee Manager"]
+        })
+        .then(function(answer) {
+            var query = "SELECT  FROM top5000 WHERE ?";
+            connection.query(query, { artist: answer.artist }, function(err, res) {
+              if (err) throw err;
 
-  })
     }
     function addEmployee () {
         inquirer
@@ -64,7 +70,7 @@ const connection = mysql.createConnection({
              type: "input"
         },
         {
-            
+
         }
     ])
 }
