@@ -3,24 +3,24 @@ const inquirer = require("inquirer");
 const logo = require('asciiart-logo');
 
 
-const config = require('./package.json');
-console.log(logo(config).render());
+// const config = require('./package.json');
+// console.log(logo(config).render());
 
-console.log(
-    logo({
-        name: 'EMPLOYEE TRACKER',
-        font: 'Speed',
-        lineChars: 10,
-        padding: 2,
-        margin: 3,
+// console.log(
+//     logo({
+//         name: 'EMPLOYEE TRACKER',
+//         font: 'Speed',
+//         lineChars: 10,
+//         padding: 2,
+//         margin: 3,
 
-    })
-    .emptyLine()
-    .right('version 3.7.123')
-    .emptyLine()
-    .center()
-    .render()
-);
+//     })
+//     .emptyLine()
+//     .right('version 3.7.123')
+//     .emptyLine()
+//     .center()
+//     .render()
+// );
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -43,6 +43,28 @@ const connection = mysql.createConnection({
   function start () {
       inquirer
       .prompt({
+          name: "options",
+          message: "What would you like to do?",
+          type: "list",
+          choices: ["View All Employees", "View all Employees by Department", "View all Employees by Manager", "Add Employee", "Remove Employee", "Update Employee Role", "Update Employee Manager"]
 
-      })
+  })
     }
+    function addEmployee () {
+        inquirer
+        .prompt([
+        {
+            name: "first-name",
+            message: "What is the employee's first name?",
+            type: "input"
+        },
+        {
+             name:"last-name",
+             message: "What is the employee's last name?",
+             type: "input"
+        },
+        {
+            
+        }
+    ])
+}
