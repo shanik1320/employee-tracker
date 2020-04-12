@@ -23,3 +23,5 @@ CREATE TABLE department(
     id INT NOT NULL AUTO_INCREMENT primary key,
     department_name VARCHAR(30) NOT NULL,
     department_id INT UNSIGNED NOT NULL)
+
+SELECT * FROM employee_db
