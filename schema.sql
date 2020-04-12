@@ -4,15 +4,21 @@ CREATE database employee_db;
 USE employee_db;
 
 CREATE TABLE employee (
+    id INT PRIMARY KEY NOT NULL,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
+    role_id INT UNSIGNED NOT NULL AUTO_INCREMENT 
+    PRIMARY KEY (id));
 
 CREATE TABLE roles (
+    id INT PRIMARY KEY NOT NULL,
     title VARCHAR(30) NOT NULL,
     salary VARCHAR (20) NOT NULL,
-    department_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
+    department_id INT UNSIGNED NOT NULL AUTO_INCREMENT 
+    PRIMARY KEY (id));
 
 CREATE TABLE department(
+    id INT PRIMARY KEY NOT NULL,
     department_name VARCHAR(30) NOT NULL
-    department_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
+    department_id INT UNSIGNED NOT NULL AUTO_INCREMENT 
+    PRIMARY KEY (id));
