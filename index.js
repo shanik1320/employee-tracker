@@ -50,12 +50,8 @@ const connection = mysql.createConnection({
           type: "list",
           choices: ["View All Employees", "View all Employees by Department", "View all Employees by Manager", "Add Employee", "Remove Employee", "Update Employee Role", "Update Employee Manager"]
         })
-        .then(function(answer) {
-            var query = "SELECT  FROM top5000 WHERE ?";
-            connection.query(query, { artist: answer.artist }, function(err, res) {
-              if (err) throw err;
 
-    }
+    },
     function addEmployee () {
         inquirer
         .prompt([
@@ -73,4 +69,6 @@ const connection = mysql.createConnection({
 
         }
     ])
-}
+})
+        })
+    }
