@@ -14,14 +14,13 @@ const connection = mysql.createConnection({
     database: "employee_db"
   });
 
-//   connection.connect(function(err) {
-//     if (err) throw err;
+  connection.connect(function(err) {
+    if (err) throw err;
 //     start();
-//   });
+   });
 
 //   function start () {
 //       inquirer
 //       .prompt({
 
 //       })
-//   }
