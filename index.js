@@ -51,7 +51,7 @@ const connection = mysql.createConnection({
           choices: ["View All Employees", "View all Employees by Department", "View all Employees by Manager", "Add Employee", "Remove Employee", "Update Employee Role", "Update Employee Manager"]
         })
 
-    },
+    }
     function addEmployee () {
         inquirer
         .prompt([
@@ -66,9 +66,14 @@ const connection = mysql.createConnection({
              type: "input"
         },
         {
-
+            name: "role",
+            message: "What is the employee's role?",
+            type: "input"
+        },
+        {
+            name: "manager",
+            message: "Who is the employee's manager?",
+            type: "input"
         }
     ])
-})
-        })
-    }
+}
