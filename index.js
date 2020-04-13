@@ -39,6 +39,7 @@ const connection = mysql.createConnection({
 
   connection.connect(function(err) {
     if (err) throw err;
+    //console.log("connection successfull");
     start();
    });
 
@@ -53,6 +54,12 @@ const connection = mysql.createConnection({
 
     }
     function addEmployee () {
+
+        connection.query("SELECT * FROM roles", function (err, results) {
+            if (err) throw err;
+        },
+    
+       
         inquirer
         .prompt([
         {
@@ -75,5 +82,5 @@ const connection = mysql.createConnection({
             message: "Who is the employee's manager?",
             type: "input"
         }
-    ])
+    ]))
 }
