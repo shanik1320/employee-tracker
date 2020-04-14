@@ -2,7 +2,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const cTable = require('console.table');
-const logo = require("asciiart-logo");
+//const logo = require("asciiart-logo");
 
 // making the logo
 // const config = require('./package.json');
@@ -35,7 +35,7 @@ const connection = mysql.createConnection({
   
     // password
     password: "root17",
-    database: "employee_db"
+    database: "employee_db",
   });
 
   connection.connect(function(err) {
@@ -50,8 +50,43 @@ const connection = mysql.createConnection({
           name: "options",
           message: "What would you like to do?",
           type: "list",
-          choices: ["View All Employees", "View all Employees by Department", "View all Employees by Manager", "Add Employee", "Remove Employee", "Update Employee Role", "Update Employee Manager"]
+          choices: [
+            "Add Employee", 
+            "View All Employees",
+            "Add Role",
+            "View All Roles",
+            "Update Role",
+            "Add Department",
+            "View Departments",
+            "View Employees by Department", 
+           "Exit"
+        ]
         })
+        switch (answers) {
+            case "Add employee":
+                addEmployee();
+                break;
+            case "View All employees":
+                viewAll();
+                break;
+            case "view all employees by department":
+                empByDepartment();
+                break;
+            case "view all employees by manager":
+                empByManager();
+                break;
+            case "remove employee":
+                removeEmp();
+                break;
+            case "update employee role":
+                updateRole();
+                break;
+            case "update employee manager":
+                updateManager();
+
+
+
+        }
 
     }
     function addEmployee () {
