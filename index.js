@@ -1,7 +1,8 @@
 // packages
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const logo = require('asciiart-logo');
+const cTable = require('console.table');
+const logo = require("asciiart-logo");
 
 // making the logo
 // const config = require('./package.json');
