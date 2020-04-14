@@ -26,4 +26,22 @@ CREATE TABLE department(
     PRIMARY KEY (id)
     );
 
+INSERT INTO department (name)
+VALUES ("finance"), ("sales"), ("marketing"), ("human resources"), ("legal");
+
+INSERT INTO roles(title, salary, department_id)
+VALUES ("sales associate", 2000, 2),
+("marketing lead", 6000, 3),
+("bookkeeper", 10000, 1),
+("HR assistant", 5500, 4),
+("accountant", 6000, 1),
+("lawyer", 12500, 5)
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Chris", "James", 1),
+("Caroline", "Lewis", 2),
+("Eduardo", "Fernandez", 3),
+("Daniel", "Hernandez", 4)
+
+
 
